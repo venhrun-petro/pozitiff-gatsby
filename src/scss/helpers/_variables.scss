@@ -1,0 +1,19 @@
+$white            : #ffffff;
+$black            : #000000;
+$shadow_color     : rgba(0, 0, 0, 0.1);
+$main_grey        : #434343;
+$background_grey  : #c4c4c4;
+$main_green       : #7abd33;
+$background_green : #8fd547;
+
+$Lato_Regular  : 'LatoWeb', sans-serif;
+$Lato_Medium   : 'LatoWebMedium', sans-serif;
+$Lato_Heavy    : 'LatoWebHeavy', sans-serif;
+
+@mixin box-shadow($x-axis: 0, $y-axis: 9px, $blur: 9px, $color: $shadow_color) {
+  box-shadow: $x-axis $y-axis $blur $color;
+}
+
+@mixin box-shadow-hover($x-axis: 0, $y-axis: 15px, $blur: 10px, $stretch: -15px, $color: $main_grey) {
+  box-shadow: $x-axis $y-axis $blur $stretch $color;
+}

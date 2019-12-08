@@ -1,0 +1,9 @@
+@import '../../../scss/helpers/variables';
+
+.contactSection {
+  background-image: url('../../../images/section_background_image.png');
+  background-color: $main_grey;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

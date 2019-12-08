@@ -1,0 +1,123 @@
+@import '../../scss/helpers/variables';
+
+.form_wrapper {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  background-color: $background_green;
+  @include box-shadow;
+}
+.contactForm_group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 2.5em;
+
+  &_label {
+    width: 25%;
+    color: $main_grey;
+    font-family: $Lato_Heavy;
+    font-size: .7rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: left;
+  }
+  &_field {
+    background-image: none !important;
+    background-color: transparent;
+    border-radius: 0;
+    border: unset;
+    border-bottom: 1px solid $main_grey;
+    color: $main_grey;
+    font-size: 1rem;
+    padding: .5rem;
+    width: 100%;
+    transition: all .2s linear;
+
+    &::placeholder {
+      color: lighten($main_grey, .3);
+      font-family: $Lato_Regular;
+      font-size: .8rem;
+    }
+    &:focus {
+      @include box-shadow-hover;
+      outline: none;
+    }
+    &:active {
+      @include box-shadow-hover;
+      outline: none;
+    }
+  }
+}
+
+.contactForm_group_textarea {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 2.5em;
+  align-items: flex-start;
+  .contactForm_group_field {
+    font-family: $Lato_Regular;
+    resize: none;
+    border-top: 1px solid $main_grey;
+    &::placeholder {
+      color: lighten($main_grey, .3);
+      font-family: $Lato_Regular;
+      font-size: .8rem;
+    }
+  }
+}
+
+.contactForm_button {
+  display: flex;
+  justify-content: flex-end;
+  .subsmitButton {
+    max-width: 150px;
+    width: 100%;
+    padding: .75rem 0;
+    text-align: center;
+    z-index: 1;
+    cursor: pointer;
+    border: 1px solid $main_grey;
+    color: $main_grey;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all .2s linear;
+    &:hover {
+      @include box-shadow-hover;
+    }
+  }
+}
+
+// .contactForm {
+//   &_error {
+//     font-size: 12px;
+//     position: absolute;
+//     bottom: -20px;
+//     left: 20%;
+//     color: #A6141A;
+//   }
+// }
+
+
+@media (max-width: 767.98px) {
+  .contactForm_group {
+    display: block;
+    &_label {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: .5em;
+    }
+  }
+  .contactForm_group_textarea {
+    display: block;
+  }
+  // .contactForm {
+  //   &_error {
+  //     left: 0;
+  //   }
+  // }
+}

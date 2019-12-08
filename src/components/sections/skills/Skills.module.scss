@@ -1,0 +1,30 @@
+@import '../../../scss/helpers/variables';
+
+.skillsSection {
+  background-image: url('../../../images/section_background_image.png');
+  background-color: $main_grey;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__content {
+    &_block {
+      padding: 1.25rem;
+      background-color: $background_green;
+      @include box-shadow;
+      margin-bottom: 30px;
+      height: calc(100% - 30px);
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &_title {
+      font-family: $Lato_Heavy;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    &_text {
+      line-height: 1.4;
+    }
+  }
+}

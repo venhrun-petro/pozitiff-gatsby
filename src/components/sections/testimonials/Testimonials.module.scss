@@ -1,0 +1,56 @@
+@import '../../../scss/helpers/variables';
+
+.testimonialsSection {
+  background-color: $main_grey;
+  &__slider {
+    border: 1px solid $white;
+    padding: 20px;
+    margin: 30px 0;
+    &__inner {
+      background: transparent;
+      &_avatar {
+        max-width: 70px;
+        width: 100%;
+        border-radius: 50%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+      &_title {
+        font-family: $Lato_Heavy;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: $white;
+      }
+      &_description {
+        line-height: 1.4;
+        color: $white;
+      }
+    }
+
+    .custom_dots {
+      & li {
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
+        & button {
+          font-size: 0;
+          line-height: 0;
+          cursor: pointer;
+          width: 12px;
+          height: 12px;
+          background-color: transparent;
+          border: .5px solid $main_green;
+          border-radius: 50%;
+          transition: all .5s ease;
+        }
+        //active
+        &.slick-active {
+          & button {
+            background: $background_green;
+          }
+        }
+      }
+    }
+  }
+}

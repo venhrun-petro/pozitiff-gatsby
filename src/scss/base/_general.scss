@@ -1,0 +1,132 @@
+@import 'helpers/variables';
+
+body {
+  font-family: $Lato_Regular;
+  font-size: 1rem;
+}
+
+section:not(#home) {
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+.section__header {
+  &_title {
+    font-family: $Lato_Regular;
+    font-size: 2.25rem;
+    line-height: 1.4;
+    margin-top: 5rem;
+    letter-spacing: 1.5rem;
+    text-transform: uppercase;
+    color: $main_grey;
+  }
+  &_image {
+    max-width: 220px;
+    width: 100%;
+    margin: 2.5rem 0;
+  }
+}
+
+//slick carousel dots
+.custom_dots {
+  & li {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+    & button {
+      font-size: 0;
+      line-height: 0;
+      cursor: pointer;
+      width: 12px;
+      height: 12px;
+      background-color: transparent;
+      border: .5px solid $main_green;
+      border-radius: 50%;
+      transition: all .5s ease;
+    }
+    //active
+    &.slick-active {
+      & button {
+        background: $background_green;
+      }
+    }
+  }
+}
+
+.bg_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($main_grey, .9);
+  z-index: 50;
+  visibility: hidden;
+  opacity: 0;
+  transition: .6s;
+}
+
+.modal_window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include box-shadow;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 400px;
+  max-height: 300px;
+  width: 100%;
+  height: 100%;
+  margin-left: -200px;
+  margin-top: -150px;
+  background: $main_green;
+  padding: 10px;
+  color: $white;
+  z-index: 100;
+  //visibility: hidden;
+  //opacity: 0;
+  transition: .3s ease-out;
+  transform: translateY(45px);
+  &_closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 30px;
+    background: darken($main_grey, 5%);
+    color: $white;
+    cursor: pointer;
+    border: 0;
+  }
+  & .modalHeader {
+    font-family: $Lato_Heavy;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+// When active class is added, that affects the modal class
+.active + .modal_window {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+.no_scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 575.98px) {
+  .modal_window {
+    max-width: 310px;
+    margin-left: -155px;
+    max-height: 250px;
+    margin-top: -125px;
+  }
+}
